@@ -7,7 +7,10 @@
  [
   "json"
   {
-   :repo "https://github.com/ahungry/janetls.git"
+   # Use the official, not the fork, as they may conflict with each other
+   # if users were to have both installed.
+   #:repo "https://github.com/ahungry/janetls.git"
+   :repo "https://github.com/LeviSchuck/janetls"
    }
   ]
  :url "https://github.com/ahungry/com.ahungry.crypt.jwt/"
