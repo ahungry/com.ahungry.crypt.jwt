@@ -1,6 +1,6 @@
 (declare-project
- :name "ahungry-janet-jwt"
- :description "JWT"
+ :name "com.ahungry.janet.crypt.janetls.jwt"
+ :description "JWT Implementation using Janetls"
  :author "Matthew Carter"
  :license "MIT"
  :dependencies
@@ -10,10 +10,10 @@
    :repo "https://github.com/ahungry/janetls.git"
    }
   ]
- :url "https://github.com/ahungry/ahungry-janet-jwt/"
- :repo "git+https://github.com/ahungry/ahungry-janet-jwt.git")
+ :url "https://github.com/ahungry/com.ahungry.janet.crypt.janetls.jwt/"
+ :repo "git+https://github.com/ahungry/com.ahungry.janet.crypt.janetls.jwt.git")
 
 (declare-source
-  :name "ahungry-janet-jwt"
-  :source ["ahungry-janet-jwt"]
+  :name "com.ahungry.janet.crypt.janetls.jwt"
+  :source ["com.ahungry.janet.crypt.janetls.jwt"]
   )
