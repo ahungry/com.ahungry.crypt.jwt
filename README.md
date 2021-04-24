@@ -2,9 +2,23 @@
 
 JWT Implementation using the Janetls library features (https://github.com/LeviSchuck/janetls)
 
+<!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
+**Table of Contents**
+
+- [com.ahungry.janet.crypt.janetls.jwt](#comahungryjanetcryptjanetlsjwt)
+- [Usage](#usage)
+    - [Encrypt a JWT:](#encrypt-a-jwt)
+    - [Verify a JWT:](#verify-a-jwt)
+    - [Get the payload/contents of a JWT:](#get-the-payloadcontents-of-a-jwt)
+- [Notes](#notes)
+- [Copyright](#copyright)
+- [License](#license)
+
+<!-- markdown-toc end -->
+
 # Usage
 
-Encrypt a JWT:
+## Encrypt a JWT:
 
 ```clojure
 (import com.ahungry.janet.crypt.janetls.jwt.janet :as jwt)
@@ -16,7 +30,7 @@ Encrypt a JWT:
 
 ```
 
-Verify a JWT:
+## Verify a JWT:
 
 ```clojure
 (import com.ahungry.janet.crypt.janetls.jwt.janet :as jwt)
@@ -24,6 +38,17 @@ Verify a JWT:
 (def secret-key "secure")
 (def the-jwt-string "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E")
 (jwt/verify-signature secret-key the-jwt-string) # Will return true or false
+```
+
+## Get the payload/contents of a JWT:
+
+```clojure
+(import com.ahungry.janet.crypt.janetls.jwt.janet :as jwt)
+
+(def hardcoded-token "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E" )
+
+(def payload-data (jwt/get-payload hardcoded-token))
+(assert (deep= @{"hello" "World"} payload-data))
 ```
 
 # Notes
