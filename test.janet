@@ -2,7 +2,11 @@
 
 # Reflection test
 (assert (= true (jwt/verify-signature "secure" (jwt/make "secure" {:hello "World"}))))
-(assert (= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E" (jwt/make "secure" {:hello "World"})))
+(def hardcoded-token "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E" )
+(assert (= hardcoded-token (jwt/make "secure" {:hello "World"})))
+
+(def payload-data (jwt/get-payload hardcoded-token))
+(assert (deep= @{"hello" "World"} payload-data))
 
 # From nodejs jsonwebtoken, making defaults (HMAC SHA256)
 # var token = jwt.sign({ foo: 'bar' }, 'secure', { noTimestamp: true });

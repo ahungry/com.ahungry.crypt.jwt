@@ -17,6 +17,8 @@
   (def b64-signature (janetls/base64/encode signature :url-unpadded))
   (string/join [b64-header b64-payload b64-signature] "."))
 
+(def make make-jwt)
+
 (defn verify-signature [secret jwt]
   (def parts (string/split "." jwt))
   (def b64-header (get parts 0))
@@ -29,4 +31,10 @@
 #(make-jwt "secure" {:hello "World"})
 #(verify-signature "secure" (make-jwt "secure" {:hello "World"}))
 
-(def make make-jwt)
+(defn get-payload [jwt]
+  (-> (def parts (string/split "." jwt))
+      (get 1)
+      (janetls/base64/decode :url-unpadded)
+      json/decode))
+
+(get-payload (make-jwt "x" {:hi "there"}))
