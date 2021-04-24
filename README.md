@@ -37,6 +37,7 @@ JWT Implementation using the Janetls library features (https://github.com/LeviSc
 
 (def secret-key "secure")
 (def the-jwt-string "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E")
+
 (jwt/verify-signature secret-key the-jwt-string) # Will return true or false
 ```
 
@@ -46,8 +47,8 @@ JWT Implementation using the Janetls library features (https://github.com/LeviSc
 (import com.ahungry.janet.crypt.janetls.jwt.janet :as jwt)
 
 (def hardcoded-token "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E" )
-
 (def payload-data (jwt/get-payload hardcoded-token))
+
 (assert (deep= @{"hello" "World"} payload-data))
 ```
 
