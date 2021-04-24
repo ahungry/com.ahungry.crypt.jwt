@@ -31,3 +31,11 @@ Verify a JWT:
 At the moment this library does not do date based validation on
 iat/exp, if you want to do that, you can take the values out of the
 payload and do so
+
+# Copyright
+
+Copyright (c) 2021 Matthew Carter <m@ahungry.com>
+
+# License
+
+MIT - see: LICENSE.md
