@@ -5,7 +5,8 @@ JWT Implementation using the Janetls library features (https://github.com/LeviSc
 <!-- markdown-toc start - Don't edit this section. Run M-x markdown-toc-refresh-toc -->
 **Table of Contents**
 
-- [com.ahungry.crypt.jwt](#comahungryjanetcryptjanetlsjwt)
+- [com.ahungry.crypt.jwt](#comahungrycryptjwt)
+- [Installation](#installation)
 - [Usage](#usage)
     - [Encrypt a JWT:](#encrypt-a-jwt)
     - [Verify a JWT:](#verify-a-jwt)
@@ -15,6 +16,25 @@ JWT Implementation using the Janetls library features (https://github.com/LeviSc
 - [License](#license)
 
 <!-- markdown-toc end -->
+
+# Installation
+
+Global:
+```sh
+jpm install https://github.com/ahungry/com.ahungry.crypt.jwt
+```
+
+Local (sample using deps as a local):
+```sh
+JANET_PATH=./deps jpm install https://github.com/ahungry/com.ahungry.crypt.jwt
+```
+
+Via your project.janet file:
+```clojure
+(declare-project
+  :name "whatever"
+  :dependencies [{:repo "https://github.com/ahungry/com.ahungry.crypt.jwt"}])
+```
 
 # Usage
 
