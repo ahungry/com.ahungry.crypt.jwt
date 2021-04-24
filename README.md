@@ -12,7 +12,7 @@ Encrypt a JWT:
 (def secret-key "secure")
 (def jwt-token (jwt/make secret-key {:hello "World"}))
 
-(assert (= "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E" jwt-token))
+(assert (= jwt-token "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E"))
 
 ```
 
