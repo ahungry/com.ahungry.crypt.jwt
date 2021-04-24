@@ -4,7 +4,7 @@
 (defn make-signature [secret b64-header b64-payload]
   (janetls/md/hmac
    :sha256 secret
-   (string/join [b64-header "." b64-payload] "")
+   (string/join [b64-header b64-payload] ".")
    :raw
    ))
 
