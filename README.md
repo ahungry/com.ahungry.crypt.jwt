@@ -21,7 +21,7 @@ JWT Implementation using the Janetls library features (https://github.com/LeviSc
 ## Encrypt a JWT:
 
 ```clojure
-(import com.ahungry.crypt.jwt.janet :as jwt)
+(import com.ahungry.crypt.jwt :as jwt)
 
 (def secret-key "secure")
 (def jwt-token (jwt/make secret-key {:hello "World"}))
@@ -33,7 +33,7 @@ JWT Implementation using the Janetls library features (https://github.com/LeviSc
 ## Verify a JWT:
 
 ```clojure
-(import com.ahungry.crypt.jwt.janet :as jwt)
+(import com.ahungry.crypt.jwt :as jwt)
 
 (def secret-key "secure")
 (def the-jwt-string "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E")
@@ -44,7 +44,7 @@ JWT Implementation using the Janetls library features (https://github.com/LeviSc
 ## Get the payload/contents of a JWT:
 
 ```clojure
-(import com.ahungry.crypt.jwt.janet :as jwt)
+(import com.ahungry.crypt.jwt :as jwt)
 
 (def hardcoded-token "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJoZWxsbyI6IldvcmxkIn0.rEJgyCQrOtCskAyDS95esDxmXLqgdx8ltGPxlLoWL4E" )
 (def payload-data (jwt/get-payload hardcoded-token))
