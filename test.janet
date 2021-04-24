@@ -1,4 +1,4 @@
-(import ./com.ahungry.janet.crypt.janetls.jwt :as jwt)
+(import ./com.ahungry.crypt.jwt :as jwt)
 
 # Reflection test
 (assert (= true (jwt/verify-signature "secure" (jwt/make "secure" {:hello "World"}))))
