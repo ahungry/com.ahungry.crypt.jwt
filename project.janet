@@ -15,5 +15,5 @@
 
 (declare-source
   :name "com.ahungry.janet.crypt.janetls.jwt"
-  :source ["com.ahungry.janet.crypt.janetls.jwt"]
+  :source ["com.ahungry.janet.crypt.janetls.jwt.janet"]
   )
