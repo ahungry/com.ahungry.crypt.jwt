@@ -56,7 +56,11 @@ JWT Implementation using the Janetls library features (https://github.com/LeviSc
 
 At the moment this library does not do date based validation on
 iat/exp, if you want to do that, you can take the values out of the
-payload and do so
+payload and do so.
+
+Also - as it is by far the most commonly used, only HS256 is
+supported, the "alg" value in the JWT header is disregarded.  If
+non-HS256 JWT are used, signature verification should just fail.
 
 # Copyright
 
