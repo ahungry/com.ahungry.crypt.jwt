@@ -5,8 +5,7 @@
   (janetls/md/hmac
    :sha256 secret
    (string/join [b64-header b64-payload] ".")
-   :raw
-   ))
+   :raw))
 
 (defn make [secret payload-ds]
   (def header (json/encode {:alg "HS256" :typ "JWT"}))
